@@ -2,21 +2,30 @@
 """
 @author: massy
 
-code to manage personal information
+code to colect the personal information of the user
 """
 
 def infoperso() :    
-    print(1)
+    
+    # ask the age of the user
     age = int(input("Enter your age :\n"))
-    gender = input("Enter your sex :\n")
-    dept = input("Enter your housing department :\n" )
+    
+    # ask the gender of the user 
+    gender = input("Enter your sex (M/W) :\n")
+    gender = gender.upper()
+    # ask again while we have not a corect answer
+    while gender != "M" or gender != "W" :
+        gender = input("Please enter M for men or W for woman :\n")
+        gender = gender.upper()
+    
+    # ask the department of the user
+    dept = input("Enter your housing department (nb) :\n" )
+    
+    # ask the profesion of the user
     profession = input("Enter your profession :\n")
     
+    # store the user information
     infoperso = {"age":age, "gender":gender, "dept":dept, "profession":profession}
     
-    print("age : ",age)
-    print("gender : ",gender)
-    print("deot : ",dept)
-    print("profession : ",profession)
-    
+    # returne the user information
     return (infoperso)
