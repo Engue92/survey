@@ -14,7 +14,7 @@ def infoperso() :
     gender = input("Enter your sex (M/W) :\n")
     gender = gender.upper()
     # ask again while we have not a corect answer
-    while gender != "M" or gender != "W" :
+    while gender != "M" and gender != "W" :
         gender = input("Please enter M for men or W for woman :\n")
         gender = gender.upper()
     

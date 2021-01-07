@@ -10,13 +10,12 @@ import survey_resum
 def display_result(proposition,score,nb_prop,info_users,nb_user):
     
     # dislplay the first part
-    print(80*"-")
+    print("\n",80*"-")
     print("{0:^80}".format("RESULTS"))
     print(80*"-")
     
     # display the score and the proposition sort from the highest score to the lowest 
-    i = 0
-    while i < nb_prop :
+    for i in range(nb_prop) :
         print("{0:^10}{1:70}".format(score[i],proposition[i]))
         i += 1
         
