@@ -42,6 +42,8 @@ def survey(proposition,score,nb_prop,nb_user,user_info):
                 
                 else :
                     new_proposition = input("Enter your proposition :\n")
+                    # we add space after the proposition because we save proposition in 100 characters in the file
+                    new_proposition = new_proposition + (" "*(100-(len(new_proposition))))
                     proposition[nb_prop] = new_proposition
                     nb_prop += 1
                     test = True # variable to know if the proposition is ok or not 

@@ -7,11 +7,13 @@ code to sort the data frome the highest score to the lowest in funtion of the pr
 
 def sort_data(score,proposition,nb_prop,nb_user):
 
-    # we create new table for the sort score and proposition
+    # we create a copie of the score in order to save our data
     score_copie = score[:]
-    score_sort = [0]*100
-    prop_sort = proposition
+    # we create new table for the sort score and proposition
+    score_sort = [0]*nb_prop
+    prop_sort = [""]*nb_prop
     
+    # j is a cunter to empty the prop_sort and score_sort table
     j = 0
     
     # we creat a maxi variable used to looking for the highest score

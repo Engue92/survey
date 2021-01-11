@@ -9,16 +9,17 @@ import init
 import survey
 import sort_data as sort
 import display
+import save_data as sd
 
 nb_user = int(input("How many users answer the survey ?\n"))
 
-proposition = [""]*100
-score = [0]*100
 users_info = []*nb_user
 
-(proposition) = init.init(proposition)
+(nb_prop,score,proposition) = init.init()
 
-(score, proposition, nb_prop, users_info) = survey.survey(proposition, score, 5, nb_user, users_info)
+(score, proposition, nb_prop, users_info) = survey.survey(proposition, score, nb_prop, nb_user, users_info)
+
+sd.backup_survey(nb_prop,score,proposition)
 
 (score_sort, prop_sort) = sort.sort_data(score, proposition, nb_prop, nb_user)
 

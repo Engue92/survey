@@ -45,6 +45,3 @@ def survey_resum(info_users,nb_user):
     percentage_woman = round((100 - percentage_men),2)
     print("\nTheir is ", percentage_men, "% of men and ",  percentage_woman, "% of woman who have answer to the survey")    
     
-    
-    
-    return()
