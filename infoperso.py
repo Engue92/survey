@@ -2,10 +2,18 @@
 """
 @author: massy
 
-code to colect the personal information of the user
+This code is used to colect the personal information of the user
+
+libraries: 
 """
 
 def infoperso() :    
+    """
+    Returns
+    -------
+    infoperso : table of string
+        all the personal information of a user.
+    """
     
     # ask the age of the user
     age = int(input("Enter your age :\n"))

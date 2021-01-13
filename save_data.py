@@ -2,13 +2,30 @@
 """
 @author: massy
 
-code used to save and load the data in files 
+This code is used to save (backup_survey) and load (load_survey) the data in a file (data_survey.txt)
+
+libraries: os
 """
 
 import os
 
 # this function is used to store the data
 def backup_survey(nb_prop,score,proposition):
+    """
+    Parameters
+    ----------
+    nb_prop : int
+        total number of proposition.
+    score : table of int
+        all the score attached to a proposition.
+    proposition : table of string
+        all the proposition of the survey.
+
+    Returns
+    -------
+    None.
+    """
+    
     path = os.getcwd()
     # we opened the file
     fichier = open(path + "/backup_survey/data_survey.txt", "w", encoding="utf8")
@@ -21,6 +38,17 @@ def backup_survey(nb_prop,score,proposition):
     
 # This function is used to load the data
 def load_survey():
+    """
+    Returns
+    -------
+    nb_prop : int
+        total number of proposition.
+    score : table of int
+        all the score attached to a proposition.
+    proposition : table of string
+        all the proposition of the survey.
+    """
+    
     path = os.getcwd()    
     # we opened the file
     fichier = open(path + "/backup_survey/data_survey.txt", "r", encoding="utf8")
@@ -40,5 +68,7 @@ def load_survey():
     # we return the empty score and proposition table and the number of proposition
     return(nb_prop,score,proposition)
 
-    
+
+
+
     

@@ -2,11 +2,29 @@
 """
 @author: massy
 
-code to sort the data frome the highest score to the lowest in funtion of the proposition
+This code is used to sort the data frome the highest score to the lowest in funtion of the proposition
+
+libraries:
 """
 
 def sort_data(score,proposition,nb_prop,nb_user):
+    """
+    Parameters
+    ----------
+    score : table of int
+        all the score attached to a proposition.
+    proposition : table of string
+        all the proposition of the survey.
+    nb_prop : int
+        total number of proposition.
+    nb_user : int
+        total number of users.
 
+    Returns
+    -------
+    None.
+    """
+    
     # we create a copie of the score in order to save our data
     score_copie = score[:]
     # we create new table for the sort score and proposition
