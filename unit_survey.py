@@ -55,7 +55,7 @@ def unit_survey(proposition,score,nb_prop,user_info):
         
         # if the user want to end the survey
         elif ans == 4 :
-            print("End of the survey")
+            print("\nEnd of the survey")
             break
         
         # if the user want to enter a new proposition
