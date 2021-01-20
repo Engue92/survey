@@ -37,7 +37,6 @@ def backup_info_perso(user_info):
     ----------
     user_info : dictionary
         all the personal information of the users.
-
     Returns
     -------
     None.
@@ -61,39 +60,6 @@ def load_info_perso():
     f.close()
     
     return(user_info)
-
-"""
-user_info = load_info_perso()
-tot_rep = (len(user_info.keys()))
-tot_rep += 1
-nb_rep = str(tot_rep)
-    
-    # we create the id of the user
-if tot_rep < 10:
-    user_id = "respondant #00"+nb_rep
-elif tot_rep >= 10 and tot_rep < 100:
-    user_id = "respondant #0"+nb_rep
-elif tot_rep >= 100:
-    user_id = "respondant #"+nb_rep
-"""
-"""
-tot = 0
-for cle, valeur in user_info.items():
-    #print("\n",user_info[cle]['age'])
-    tot += int(user_info[cle]['age'])
-
-moyenne = tot / 4
-print(moyenne,"\n")
-"""
-"""
-for cle, valeur in user_info.items():
-    print("\n",user_info[cle]['gender'])
-
-"""
-
-
-
-
 
 
 
