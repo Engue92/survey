@@ -7,7 +7,7 @@ This code is used to display all the results
 libraries:
 """
 
-def display_result(proposition,score,nb_prop,info_users,nb_user):
+def display_result(proposition,score,nb_prop,user_info):
     """
     Parameters
     ----------
@@ -17,15 +17,14 @@ def display_result(proposition,score,nb_prop,info_users,nb_user):
         all the score attached to a proposition.
     nb_prop : int
         total number of proposition.
-    info_users : table of string
-        all the information of the users.
-    nb_user : int
-        total number of users.
-
+    user_info : dictionary
+        all the personal information of the users.
     Returns
     -------
     None.
     """
+    
+    nb_user = (len(user_info.keys()))
     
     # dislplay the first part
     print("\n",80*"-")
@@ -38,10 +37,10 @@ def display_result(proposition,score,nb_prop,info_users,nb_user):
         i += 1
         
     # use the programe who display the resum of the survey
-    survey_resum.survey_resum(info_users,nb_user)
+    survey_resum(user_info,nb_user)
         
 
-def survey_resum(info_users,nb_user):
+def survey_resum(user_info,nb_user):
     """
     Parameters
     ----------
@@ -49,48 +48,50 @@ def survey_resum(info_users,nb_user):
         all the information of the users.
     nb_user : int
         toal number of users.
-
     Returns
     -------
     None.
     """
-    
     # we display all the department of the users without redundancies
     print("\n\nThe users come from this department :")
     # We make a copie of the data to avoid displaying duplicates data
     double_info = [""]*nb_user
-    for i in range(nb_user) :
-        if info_users[i]["dept"] not in double_info :
-            print(info_users[i]["dept"],  end=' ')
-            double_info[i] += info_users[i]["dept"]
+    i = 0
+    for cle, value in user_info.items():
+        if user_info[cle]['dept'] not in double_info :
+            print(user_info[cle]['dept'],  end=' ')
+            double_info[i] += user_info[cle]['dept']
+            i += 1
 
 
     # we display all the profesion of the users without redundancies
     print("\n\nThe profesion of the users is :")
     double_info = [""]*nb_user
-    for i in range(nb_user) :
-        if info_users[i]["profession"] not in double_info :
-            print(info_users[i]["profession"],  end=' ')
-            double_info[i] = info_users[i]["profession"]
+    i = 0
+    for cle, value in user_info.items():
+        if user_info[cle]['profession'] not in double_info :
+            print(user_info[cle]["profession"],  end=' ')
+            double_info[i] = user_info[cle]["profession"]
+            i += 1
     
     
     # we calculate and display the average age of the users
     sum_age = 0
-    for i in range(nb_user) :
-        sum_age += info_users[i]["age"]
+    for cle, value in user_info.items():
+        sum_age += user_info[cle]["age"]
     avg_age = round(sum_age / nb_user,2)
-    print("\n\nThe average age of the users is : ", avg_age, "years")
+    print("\n\nThe average age of the users is :", avg_age, "years")
 
 
     # we calculate the number of men who have answer the survey
     sum_men = 0
-    for i in range(nb_user) :
-        if info_users[i]["gender"] == "M" :
+    for cle, value in user_info.items():
+        if user_info[cle]["gender"] == "M" :
             sum_men += 1
     # we calculate the % of men and woman and display the result
     percentage_men = round(((sum_men/nb_user)*100),2)
     percentage_woman = round((100 - percentage_men),2)
-    print("\nTheir is ", percentage_men, "% of men and ",  percentage_woman, "% of woman who have answer to the survey")    
+    print("\nTheir is", percentage_men, "% of men and",  percentage_woman, "% of woman who have answer to the survey")    
     
     
     

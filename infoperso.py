@@ -2,7 +2,7 @@
 """
 @author: massy
 
-This code is used to colect the personal information of the user
+This code is used to colect the personal information of a user
 
 libraries: 
 """
@@ -11,7 +11,7 @@ def infoperso() :
     """
     Returns
     -------
-    infoperso : table of string
+    infoperso : dictionary
         all the personal information of a user.
     """
     
