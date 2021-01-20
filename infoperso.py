@@ -14,7 +14,6 @@ def infoperso() :
     infoperso : dictionary
         all the personal information of a user.
     """
-    
     # ask the age of the user
     age = int(input("Enter your age :\n"))
     
